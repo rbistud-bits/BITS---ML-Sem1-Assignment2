@@ -32,7 +32,7 @@ This dataset is widely used for binary classification tasks to predict whether a
 | Property                | Value                  |
 | ----------------------- | ---------------------- |
 | Instances               | 569                    |
-| Features after encoding | 31                     |
+| Features after encoding | 30                     |
 | Target Variable         | diagnosis              |
 | Classes                 | 2 (Malignant / Benign) |
 
@@ -78,11 +78,11 @@ Each model is evaluated using:
 | ML Model            | Accuracy   | AUC        | Precision  | Recall     | F1         | MCC        |
 | ------------------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
 | Logistic Regression | **0.9649** | 0.9960     | 0.9672     | 0.9573     | 0.9619     | 0.9245     |
-| Decision Tree       | 0.9386     | 0.9282     | 0.9360     | 0.9315     | 0.9337     | 0.8676     |
-| KNN                 | 0.9561     | 0.9828     | 0.9605     | 0.9454     | 0.9521     | 0.9058     |
-| Naive Bayes         | 0.6228     | 0.9246     | 0.3142     | 0.4931     | 0.3838     | -0.0718    |
-| Random Forest       | **0.9737** | 0.9934     | 0.9800     | 0.9643     | 0.9713     | 0.9442     |
-| XGBoost             | **0.9737** | **0.9954** | **0.9800** | **0.9643** | **0.9713** | **0.9442** |
+| Decision Tree       | 0.9386     | 0.9225     | 0.9410     | 0.9266     | 0.9330     | 0.8675     |
+| KNN                 | 0.9561     | 0.9823     | 0.9605     | 0.9454     | 0.9521     | 0.9058     |
+| Naive Bayes         | 0.9386     | 0.9934     | 0.9557     | 0.9167     | 0.9314     | 0.8715     |
+| Random Forest       | **0.9737** | 0.9944     | 0.9800     | 0.9643     | 0.9713     | 0.9442     |
+| XGBoost             | **0.9737** | **0.9931** | **0.9800** | **0.9643** | **0.9713** | **0.9442** |
 
 ---
 
@@ -90,12 +90,12 @@ Each model is evaluated using:
 
 | Model               | Observation                                                            |
 | ------------------- | ---------------------------------------------------------------------- |
-| Logistic Regression | Strong baseline model with excellent AUC and balanced performance.     |
-| Decision Tree       | Performs well but slightly prone to overfitting compared to ensembles. |
-| KNN                 | Good performance but sensitive to feature scaling and dataset size.    |
-| Naive Bayes         | Assumption of feature independence not suitable → weakest performer.   |
-| Random Forest       | Excellent accuracy and MCC due to ensemble learning.                   |
-| XGBoost             | **Best overall model** with highest AUC and balanced metrics.          |
+| Logistic Regression | Strong baseline model with excellent AUC and stable performance. Performs well due to linear separability of dataset.     |
+| Decision Tree       | Good interpretability but lower AUC and MCC due to overfitting risk. |
+| KNN                 | Performs well with feature scaling but computationally heavier for larger datasets.    |
+| Naive Bayes         | Lower performance due to independence assumption between features.   |
+| Random Forest       | Best overall performer. High accuracy, AUC and MCC. Handles feature interactions well.                   |
+| XGBoost             | Matches Random Forest performance. Excellent generalization and robust ensemble performance.         |
 
 ### Final Conclusion
 
@@ -137,7 +137,7 @@ streamlit run app.py
 
 The application is deployed on **Streamlit Community Cloud**.
 
-Live App Link: *(Add after deployment)*
+Live App Link: *https://2025aa05344-s1-ml2.streamlit.app/*
 
 ---
 
